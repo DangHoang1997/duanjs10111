@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>bài tập mảng xoá</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -19,44 +19,37 @@
   </head>
 
   <body>
-    <!-- <h3>bài tập xoá mảng html [1,2,3,4,5,6,7]</h3>
-    <div class="form">
-      <input class="input1" type="text" placeholder="nhập số để xoá phần tử " />
-      <button id="btn-xoa">click</button>
-    </div>
-    <div style="display: none" id="ketquabaitap1" class="">
-      <input class="input2" type="input2" />
-      <button id="btn-xoaxong">click</button>
-    </div>
+    <h3>bài tập xoá mảng</h3>
+    <input id="nhapSo" type="number" placeholder="nhập số để xoá mảng " />
+    <button id="delete">click xoá mảng</button>
+    <div style="display: none" id="ketquatrave"></div>
 
     <script>
-      document.querySelector("#btn-xoa").onclick = function () {
-        // input
-        var arrNumber = [1, 2, 5, 6, 7];
-        var input1 = document.querySelector(".input1").value * 1;
-        var viTri = -1;
-        for (var i = 0; i < arrNumber.length; i++) {
-          var giaTriPhanTu = arrNumber[i];
+      var arrName = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+      document.querySelector("#delete").onclick = function () {
+        // input nhap so
 
-          if (input1 == giaTriPhanTu) {
-            viTri = i;
+        var nhapSo = document.querySelector("#nhapSo").value * 1;
+        // nhap so xong xoa phan tu mang
+        //process
+        var viTri = -1;
+        for (index = 0; index <= arrName.length; index++) {
+          var giaTriPhanTu = arrName[index];
+          if (nhapSo === giaTriPhanTu) {
+            viTri = index;
+            // tim thay phan tu bang dung vong lap
+            break;
           }
         }
         if (viTri !== -1) {
-          arrNumber.splice(viTri, 1);
-          document
-            .querySelector("#ketquabaitap1")
-            .setAttribute("style", "display :block");
-          document.querySelector("#ketquabaitap1").innerHTML =
-            "mang sau khi xoa ${arrNumber}";
+          arrName.splice(viTri, 1, 99);
+          document.querySelector("#ketquatrave").style.display = "block";
+          document.querySelector("#ketquatrave").textContent = arrName;
         } else {
-          alert("so khong ton tai ");
+          alert(`trong mảng không có phần tử`);
         }
-        console.log("vitri", viTri);
-      }; -->
-
-
-
+        console.log(viTri);
+      };
     </script>
   </body>
 </html>
