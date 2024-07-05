@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xoá phần tử từ mảng</title>
+  </head>
+  <body>
+    <h3>Bài tập xoá mảng HTML [1, 2, 3, 4, 5, 6, 7]</h3>
+    <div class="form">
+      <input class="input1" type="text" placeholder="Nhập số để xoá phần tử" />
+      <button id="btn-xoa">Click</button>
+    </div>
+    <div style="display: none" id="ketquabaitap1" class="result">
+      <p>Mảng sau khi xoá: <span class="output"></span></p>
+    </div>
+
+    <script>
+      var arrNumber = [1, 2, 3, 4, 5, 6, 7];
+
+      document.querySelector("#btn-xoa").onclick = function () {
+        var input1 = document.querySelector(".input1").value * 1;
+        var viTri = -1;
+
+        for (var i = 0; i < arrNumber.length; i++) {
+          var giaTriPhanTu = arrNumber[i];
+          if (input1 === giaTriPhanTu) {
+            viTri = i;
+            break; // Tìm thấy phần tử, dừng vòng lặp
+          }
+        }
+
+        if (viTri !== -1) {
+          arrNumber.splice(viTri, 1, 99);
+          document.querySelector("#ketquabaitap1").style.display = "block";
+          document.querySelector("#ketquabaitap1 .output").textContent =
+            arrNumber;
+        } else {
+          alert("Số không tồn tại trong mảng");
+        }
+        console.log(viTri);
+      };
+      //--------------------------------------------------------------------------//
+      // document.querySelector("#btn-xoa").onclick = function () {
+      //   var arrNumber = [1, 2, 3, 4, 5, 6, 7];
+      //   var input1 = document.querySelector(".input1").value * 1;
+      //   var viTri = -1;
+
+      //   for (var i = 0; i < arrNumber.length; i++) {
+      //     var giaTriPhanTu = arrNumber[i];
+      //     if (input1 === giaTriPhanTu) {
+      //       viTri = i;
+      //       break; // Tìm thấy phần tử, dừng vòng lặp
+      //     }
+      //   }
+
+      //   if (viTri !== -1) {
+      //     arrNumber.splice(viTri, 1);
+      //     document.querySelector("#ketquabaitap1").style.display = "block";
+      //     document.querySelector("#ketquabaitap1 .output").textContent =
+      //       arrNumber;
+      //   } else {
+      //     alert("Số không tồn tại trong mảng");
+      //   }
+      //   console.log(viTri);
+      // };
+    </script>
+  </body>
+</html>

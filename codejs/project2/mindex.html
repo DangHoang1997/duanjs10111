@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+        
+      
+      .container div {
+        width: 150px;
+        height: 80px;
+        border-radius: 8px;
+      }
+      div{
+        margin: 40px 0px ;
+        background:green;
+        
+        
+      }
+      div input{
+        padding: 8px 16px;
+        border-radius: 8px;
+      }
+      button{
+        padding: 8px 6px;
+        background-color: green;
+        color: red;
+        border-radius: 4px;
+        border: none;
+      }
+      .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px; /* Tạo khoảng trống giữa các box */
+            background-color: lightblue;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px; /* Center text vertically */
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .them-tu-html {
+            background-color: yellow; /* Thêm kiểu để dễ thấy thay đổi */
+        }
+
+    </style>
+    <head>
+      
+      
+  </head>
+
+  <body>
+    <div id="theDiv" class="container"></div>
+
+<div action="#">
+    <input id="valuee" type="number" placeholder="nhap so luong div ban muon">
+    <button id="createdDiv">click</button>
+</div>
+    
+
+
+
+
+
+
+
+
+
+    <script>
+
+    //   var divNumber = 9;
+    //   var divString = "";
+
+    //   for (let i = 0; i < divNumber; i++) {
+    //     divString += "<div> $(divNumber)      </div>";
+    //   }
+    //   document.querySelector(".container").innerHTML = divString;
+
+      
+    
+
+    document.querySelector('#createdDiv').onclick = function() {
+            var value = document.getElementById('valuee').value * 1;
+            var string = "";
+            for (var i = 0; i < value; i++) {
+                string += `<div class="box">${i + 1}</div>`;
+            }
+            document.querySelector('.container').innerHTML = string;
+
+            // Thêm class vào tất cả các div mới tạo
+            var boxes = document.querySelectorAll('.container .box');
+            boxes.forEach(box => {
+                box.classList.add('them-tu-html');
+            });
+        }
+    </script>
+
+
+   
+  </body>
+</html>
